@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebviewSample</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<h1>WebviewSample</h1>
+<button onclick="showToast('Hello Android')">Android 토스트 띄우기</button>
+<button onclick="windowOpen()">새 창 열기</button>
+
+<script>
+    function showToast(toast) {
+        Android.showToast(toast)
+    }
+
+    function windowOpen() {
+        var url = 'https://m.naver.com'
+        var popOption = "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=yes";
+        window.open(url, popOption);
+    }
+
+</script>
+</body>
+</html>
