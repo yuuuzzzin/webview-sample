@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>WebviewSample</title>
     <style>
         body {
@@ -23,27 +24,22 @@
             padding: 10px;
             font-size: 1em;
         }
-
-
-
     </style>
 </head>
 <body>
 <h1>WebviewSample</h1>
-<button onclick="showToast('Hello Android')">Android 토스트 띄우기</button>
-<button onclick="windowOpen()">새 창 열기</button>
+<button onclick="showAndroidToast('Hello Android from Web')">안드로이드 토스트 띄우기</button>
+<button onclick="window.location.href = 'https://youtu.be/bHjVSTVSzeI?si=pP4lONHa9WTBS8gr';">유튜브로 이동하기</button>
 
 <script>
-    function showToast(toast) {
-        Android.showToast(toast)
+    function showAndroidToast(toast) {
+        AndroidBridge.showToast(toast)
     }
 
-    function windowOpen() {
-        var url = 'https://m.naver.com'
-        var popOption = "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=yes";
-        window.open(url, popOption);
+    function showWebViewAlert(text) {
+        alert(text)
+        return 200
     }
-
 </script>
 </body>
 </html>
